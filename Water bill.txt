@@ -1,0 +1,573 @@
+// Initials and inputs of the User
+Console.WriteLine("Write customerName and Surname: ");
+string surname= Console.ReadLine();
+
+Console.WriteLine("Enter Plot Number. : ");
+// string to integer conversion or parsing
+string plot number = Console.ReadLine();
+int plotnumer = Int32.Parse(pLotnum);
+
+Console.WriteLine("Enter Location : ");
+string location = Console.ReadLine();
+
+Console.WriteLine("enter User Type:");
+string userTypE = Console.ReadLine();
+// lowercase coversion
+string FullUserType = userTypE.ToLower();
+// string to double conversion or parsing
+Console.WriteLine("Enter the Amount of water used in (KL): ");
+string water Used = Console.ReadLine();
+double water Used2 = double.Parse(waterUsed);
+//domestic water bill calculations
+if (FullUserType == "domestic"){
+
+//Portable water and wastewater bill calculations
+
+if (waterUsed2 > 40){
+
+//portable water
+double PortableWater = waterUsed2 - 40;
+PortableWater*= 39.66;
+double FixedCharge1 = 1979;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2 - 40;
+WasteWater*=7.36;
+double FixedCharge2 = 393.35;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations .... assuming Vat is 14% or 0.14
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+
+displayBillInfo(name,plotnum2,location,fullusertype,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+
+}
+else if (waterUsed2 <= 40 && waterUsed2 >= 25 ){
+
+//portablewater
+double PortableWater = waterUsed2*31.72;
+double FixedCharge1 = 710.2;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*5.89;
+double FixedCharge2 = 157.75;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(name,plotnum2,location,fullusertype,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 25 && waterUsed2 >=15 ){
+//portablewater
+double PortableWater = waterUsed2*20.62;
+double FixedCharge1 = 194.7;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*4.41;
+double FixedCharge2 = 47.5;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,plotnum2,location,fullusertype,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 15 && waterUsed2 >= 5 ){
+//portablewater
+double PortableWater = waterUsed2*11.78;
+double FixedCharge1 = 18;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*2.95;
+double FixedCharge2 = 3.25;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 5 && waterUsed2 >= 0 ){
+//portablewater
+double PortableWater = waterUsed2*3.6;
+double FixedCharge1 = 0;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*0.65;
+double FixedCharge2 = 0;
+WasteWater+= FixedCharge2;
+
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = 0;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else{
+Console.WriteLine("The amount of water used value is not Valid!");
+}
+
+}
+
+
+//business, commercial and industrial water and wastewater bill calculations
+else if ( FullUserType == "business"  ){
+
+
+if (waterUsed2 > 40){
+//portable water
+double PortableWater = waterUsed2 - 40;
+PortableWater*= 43.16;
+double FixedCharge1 = 2155.7;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2 - 40;
+WasteWater*=7.36;
+double FixedCharge2 = 393.35;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations .... assuming Vat is 14% or 0.14
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+else if (waterUsed2 <= 40 && waterUsed2 >= 25 ){
+//portablewater
+double PortableWater = waterUsed2*34.52;
+double FixedCharge1 = 774.9;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*5.89;
+double FixedCharge2 = 157.75;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 25 && waterUsed2 >=15 ){
+//portablewater
+double PortableWater = waterUsed2*22.44;
+double FixedCharge1 = 213.9;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*4.41;
+double FixedCharge2 = 47.5;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 15 && waterUsed2 >= 5 ){
+//portablewater
+double PortableWater = waterUsed2*12.82;
+double FixedCharge1 = 21.6;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*2.95;
+double FixedCharge2 = 3.25;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 5 && waterUsed2 >= 0 ){
+//portablewater
+double PortableWater = waterUsed2*4.32;
+double FixedCharge1 = 0;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*0.65;
+double FixedCharge2 = 0;
+WasteWater+= FixedCharge2;
+
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = 0;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else{
+    Console.WriteLine("The amount of water used value is not Valid!");
+}
+
+
+
+
+
+}
+else {
+    Console.WriteLine("Please make sure the following are correct:\nplot no. is written in whole numbers,\nUser Type is specified and written exactly as either domestic or business (this includes for commercial and industrial also),\nThe amount of water used is in either whole numbers or floats and they are all non negative or 0 ");
+}
+
+//Method Declaration
+void displayBillInfo(string n,int p, string l, string u, double AmountOfwater, double waterCost,double wastewaterCost,double TotalVat,double TotalBill){
+
+Console.WriteLine("........................................................................................................\nName: {0}\t\t\tPlot: {1}\t\tLocation: {2}\t\bMonthly Bill\nUserType: {3}\nPotable Water Used: {4}KL\nPotable Water Cost: P{5}\nWastewater Cost: P{6}\nVat: P{7}\nTotal Amount: P{8}\n........................................................................................................",n,p,l,u,AmountOfwater,waterCost,wastewaterCost,TotalVat,TotalBill);// Initials and inputs of the User
+Console.WriteLine("Name and Surname: ");
+string nAmE = Console.ReadLine();
+
+Console.WriteLine("Plot No. : ");
+// string to integer conversion or parsing
+string pLotnum = Console.ReadLine();
+int pLotnum2 = Int32.Parse(pLotnum);
+
+Console.WriteLine("Location : ");
+string loCation = Console.ReadLine();
+
+Console.WriteLine("User Type:");
+string userTypE = Console.ReadLine();
+// lowercase coversion
+string FullUserType = userTypE.ToLower();
+// string to double conversion or parsing
+Console.WriteLine("Amount of water used (KL): ");
+string waterUsed = Console.ReadLine();
+double waterUsed2 = double.Parse(waterUsed);
+//domestic water bill calculations
+if (FullUserType == "domestic"){
+
+//Portable water and wastewater bill calculations
+
+if (waterUsed2 > 40){
+
+//portable water
+double PortableWater = waterUsed2 - 40;
+PortableWater*= 39.66;
+double FixedCharge1 = 1979;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2 - 40;
+WasteWater*=7.36;
+double FixedCharge2 = 393.35;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations .... assuming Vat is 14% or 0.14
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+
+}
+else if (waterUsed2 <= 40 && waterUsed2 >= 25 ){
+
+//portablewater
+double PortableWater = waterUsed2*31.72;
+double FixedCharge1 = 710.2;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*5.89;
+double FixedCharge2 = 157.75;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 25 && waterUsed2 >=15 ){
+//portablewater
+double PortableWater = waterUsed2*20.62;
+double FixedCharge1 = 194.7;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*4.41;
+double FixedCharge2 = 47.5;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 15 && waterUsed2 >= 5 ){
+//portablewater
+double PortableWater = waterUsed2*11.78;
+double FixedCharge1 = 18;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*2.95;
+double FixedCharge2 = 3.25;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 5 && waterUsed2 >= 0 ){
+//portablewater
+double PortableWater = waterUsed2*3.6;
+double FixedCharge1 = 0;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*0.65;
+double FixedCharge2 = 0;
+WasteWater+= FixedCharge2;
+
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = 0;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else{
+Console.WriteLine("The amount of water used value is not Valid!");
+}
+
+}
+
+
+//business, commercial and industrial water and wastewater bill calculations
+else if ( FullUserType == "business"  ){
+
+
+if (waterUsed2 > 40){
+//portable water
+double PortableWater = waterUsed2 - 40;
+PortableWater*= 43.16;
+double FixedCharge1 = 2155.7;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2 - 40;
+WasteWater*=7.36;
+double FixedCharge2 = 393.35;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations .... assuming Vat is 14% or 0.14
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+else if (waterUsed2 <= 40 && waterUsed2 >= 25 ){
+//portablewater
+double PortableWater = waterUsed2*34.52;
+double FixedCharge1 = 774.9;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*5.89;
+double FixedCharge2 = 157.75;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 25 && waterUsed2 >=15 ){
+//portablewater
+double PortableWater = waterUsed2*22.44;
+double FixedCharge1 = 213.9;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*4.41;
+double FixedCharge2 = 47.5;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 15 && waterUsed2 >= 5 ){
+//portablewater
+double PortableWater = waterUsed2*12.82;
+double FixedCharge1 = 21.6;
+double PortableFixedCharge = 5*3.6;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*2.95;
+double FixedCharge2 = 3.25;
+double WasteWaterFixedCharge = 5*0.65;
+WasteWater+= FixedCharge2;
+//Vat calculations 
+double PortableWaterVat = PortableWater - PortableFixedCharge;
+PortableWaterVat*=0.14;
+double WasteWaterVat = WasteWater - WasteWaterFixedCharge;
+WasteWaterVat*=0.14;
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = PortableWaterVat + WasteWaterVat;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(nAmE,pLotnum2,loCation,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else if (waterUsed2 <= 5 && waterUsed2 >= 0 ){
+//portablewater
+double PortableWater = waterUsed2*4.32;
+double FixedCharge1 = 0;
+PortableWater += FixedCharge1;
+
+//wastewater
+double WasteWater = waterUsed2*0.65;
+double FixedCharge2 = 0;
+WasteWater+= FixedCharge2;
+
+// Total Bill caculations
+double TotalMixedCost = WasteWater + PortableWater;
+double TotalVatBill = 0;
+double TotalWaterBill = TotalMixedCost + TotalVatBill;
+displayBillInfo(namE,plotnum2,location,FullUserType,waterUsed2,PortableWater,WasteWater,TotalVatBill,TotalWaterBill);
+}
+
+else{
+    Console.WriteLine("The amount of water used value is not Valid!");
+}
+
+
+
+
+
+}
+else {
+    Console.WriteLine("Please make sure the following are correct:\nplot no. is written in whole numbers,\nUser Type is specified and written exactly as either domestic or business (this includes for commercial and industrial also),\nThe amount of water used is in either whole numbers or floats and they are all non negative or 0 ");
+}
+
+//Method Declaration
+void displayBillInfo(string n,int p, string l, string u, double AmountOfwater, double waterCost,double wastewaterCost,double TotalVat,double TotalBill){
+
+Console.WriteLine("........................................................................................................\nName: {0}\t\t\tPlot: {1}\t\tLocation: {2}\t\bMonthly Bill\nUserType: {3}\nPotable Water Used: {4}KL\nPotable Water Cost: P{5}\nWastewater Cost: P{6}\nVat: P{7}\nTotal Amount: P{8}\n........................................................................................................",n,p,l,u,AmountOfwater,waterCost,wastewaterCost,TotalVat,TotalBill);
